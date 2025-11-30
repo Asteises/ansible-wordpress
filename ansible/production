@@ -1,0 +1,5 @@
+[webservers]
+wp-server ansible_host=192.168.31.12
+
+[dbservers]
+wp-server ansible_host=192.168.31.12

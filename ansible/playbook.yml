@@ -1,0 +1,9 @@
+---
+- name: Install LAMP stack and WordPress
+  hosts: webservers:dbservers
+  become: yes
+  roles:
+    - apache
+    - mysql
+    - php
+    - wordpress

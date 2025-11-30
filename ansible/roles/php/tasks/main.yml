@@ -1,0 +1,14 @@
+---
+- name: Install PHP and required extensions
+  apt:
+    name:
+      - php{{ php_version }}
+      - php{{ php_version }}-mysql
+      - php{{ php_version }}-curl
+      - php{{ php_version }}-gd
+      - php{{ php_version }}-mbstring
+      - php{{ php_version }}-xml
+      - php{{ php_version }}-zip
+      - libapache2-mod-php{{ php_version }}
+    state: present
+    update_cache: yes
