@@ -1,4 +1,19 @@
 ---
+- name: Install required packages for adding PPA
+  apt:
+    name:
+      - software-properties-common
+      - apt-transport-https
+      - lsb-release
+      - ca-certificates
+      - gnupg
+    state: present
+
+- name: Add PHP PPA repository (ondrej/php)
+  ansible.builtin.apt_repository:
+    repo: ppa:ondrej/php
+    update_cache: yes
+    
 - name: Install PHP and required extensions
   apt:
     name:
