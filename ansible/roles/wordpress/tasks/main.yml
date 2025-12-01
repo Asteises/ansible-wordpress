@@ -37,6 +37,11 @@
     src: wordpress.conf.j2
     dest: /etc/apache2/sites-available/wordpress.conf
 
+- name: Disable default Apache site
+  command: a2dissite 000-default.conf
+  ignore_errors: yes
+  notify: reload apache
+
 - name: Enable WordPress site
   command: a2ensite wordpress.conf
   notify: restart apache
